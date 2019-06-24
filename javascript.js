@@ -58,6 +58,10 @@ const KeyPupMap = {
   52: 'rubble',
   53: 'rocky',
   54: 'zuma',
+  55: 'tracker',
+  56: 'everest',
+  57: 'robodog',
+  48: 'ryder',
 };
 
 window.addEventListener('load', (e) => {

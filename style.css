@@ -19,11 +19,11 @@ html {
 
 .keys { /* This is the main grid with the pups */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 160%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 220%;
   position: absolute;
-  top: 11vh;
-  left: 22vw;
+  top: 17vh;
+  left: 11vw;
 }
 
 .wrapper { /* This houses the pups on the page */
@@ -33,65 +33,64 @@ html {
 }
 
 /* Each pup has their own individual styling on the grid */
-
-#pup-chase {
-  border: .4rem solid #2b4083;
+.pup-badge {
+  border-width: .4rem;
+  border-style: solid;
   border-radius: 6rem;
   margin: 1rem;
   transition: all .07s ease;
   text-align: center;
-  background: rgba(211, 48, 49, 0.2);
   text-shadow: 0 0 .5rem black;
+}
+
+#pup-chase {
+  border-color: #2b4083;
+  background: rgba(211, 48, 49, 0.2);
 }
 
 #pup-marshall {
-  border: .4rem solid #d2232a;
-  border-radius: 6rem;
-  margin: 1rem;
-  transition: all .07s ease;
-  text-align: center;
+  border-color: #d2232a;
   background: rgba(254, 236, 2, 0.2);
-  text-shadow: 0 0 .5rem black;
 }
 
 #pup-skye {
-  border: .4rem solid #d283a3;
-  border-radius: 6rem;
-  margin: 1rem;
-  transition: all .07s ease;
-  text-align: center;
+  border-color: #d283a3;
   background: rgba(227, 56, 148, 0.2);
-  text-shadow: 0 0 .5rem black;
 }
 
 #pup-rubble {
-  border: .4rem solid #f8e600;
-  border-radius: 6rem;
-  margin: 1rem;
-  transition: all .07s ease;
-  text-align: center;
+  border-color: #f8e600;
   background: rgba(245, 140, 31, 0.2);
-  text-shadow: 0 0 .5rem black;
 }
 
 #pup-rocky {
-  border: .4rem solid #489a45;
-  border-radius: 6rem;
-  margin: 1rem;
-  transition: all .07s ease;
-  text-align: center;
-  background: rgba(25, 120, 180, 0.2);
-  text-shadow: 0 0 .5rem black;
+  border-color: #489a45;
+  background: rgba(25, 120, 180, 0.4);
 }
 
 #pup-zuma {
-  border: .4rem solid #ed6c35;
-  border-radius: 6rem;
-  margin: 1rem;
-  transition: all .07s ease;
-  text-align: center;
+  border-color: #ed6c35;
   background: rgba(1, 87, 136, 0.2);
-  text-shadow: 0 0 .5rem black;
+}
+
+#pup-tracker {
+  border-color: rgb(108, 113, 84);
+  background: rgba(243, 125, 60, 0.2);
+}
+
+#pup-everest {
+  border-color: rgb(224, 176, 79);
+  background: rgba(87, 189, 178, 0.4);
+}
+
+#pup-robodog {
+  border-color: rgb(112, 120, 109);
+  background: rgba(176, 221, 244, 0.6);
+}
+
+#pup-ryder {
+  border-color: rgb(205, 29, 33);
+  background: rgba(241, 252, 161, 0.5);
 }
 
 .playing { /* This is the animation for the pups when they are selected via click or key down*/
