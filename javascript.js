@@ -1,5 +1,3 @@
-console.log('hello paw patroller');
-
 const removePlayingClass = (e) => {
   if (e.propertyName !== 'transform') return;
   e.target.classList.remove('playing');
@@ -37,7 +35,7 @@ const handleOnPress = (e) => {
 }
 
 // setup removeTransition and pupClickHandler
-const setupPupClick = (name) => {
+const addPupEventListenter = (name) => {
   const el = document.getElementById(`pup-${name}`);
   el.addEventListener('transitionend', removePlayingClass);
   el.addEventListener('click', handleOnClick(name));
@@ -52,5 +50,9 @@ const KeyPupMap = {
   54: 'zuma',
 };
 
-window.addEventListener('keydown', handleOnPress); // This plays the audio clip on key keydown
-Object.values(KeyPupMap).forEach(setupPupClick)
+window.addEventListener('load', (e) => {
+  console.log('hello paw patroller');
+
+  window.addEventListener('keydown', handleOnPress); // This plays the audio clip on key keydown
+  Object.values(KeyPupMap).forEach(addPupEventListenter)
+});
