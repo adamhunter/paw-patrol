@@ -1,6 +1,9 @@
-const removePlayingClass = (e) => {
-  if (e.propertyName !== 'transform') return;
-  e.target.classList.remove('playing');
+// only allow one sound to play at a time using a singleton cache
+const playOneSound = (name) => {
+  if (window.currentPupAudioFile) {
+    window.currentPupAudioFile.pause();
+  }
+  window.currentPupAudioFile = playSound(name);
 }
 
 // This plays the audio clip on mouse click of the button
@@ -13,7 +16,8 @@ const playSound = (name) => {
   // This last bit of code should stop the mouse click spam. Instead audioElement returns as  "<audio src="assets/audio/marshall-audio.wav"></audio>"
   // While the working version of audio on button click returns "<audio src="assets/audio/marshall-audio.wav"></audio>"
   audioElement.currentTime = 0;
-  audioElement.play().then(() => audioElement.remove());
+  audioElement.play();
+  return audioElement;
 }
 
 const playSoundAndAnimate = (name) => {
@@ -21,10 +25,16 @@ const playSoundAndAnimate = (name) => {
 
   console.log(name);
   el.classList.add('playing');
-  playSound(name);
+  playOneSound(name);
 }
 
-// handleClick factory binding click handler to name
+// remove playing from pup div
+const removePlayingClass = (e) => {
+  if (e.propertyName !== 'transform') return;
+  e.target.classList.remove('playing');
+}
+
+// handleClick factory binding onClick with name
 const handleOnClick = name => e => playSoundAndAnimate(name);
 
 const handleOnPress = (e) => {
